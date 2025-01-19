@@ -2,13 +2,25 @@
 <html> 
   <head> 
     <!-- Adding a title to the html file-->
-    <title>Learning PUG </title>
+    <title>Learning PUG</title>
+    <!-- Using of the CSS style -->
+    <!-- Need to create a CSS file.-->
+    <link rel="stylesheet" href="style.css">
+    <!--Crating a multi line style-->
+    <style>
+      p {
+          color : Yellow;
+          text-decoration: underline;
+      }
+      
+    </style>
   </head>
   <body> 
     <!-- Creating an h1 header-->
     <h1>Learning PUG </h1>
     <!-- Creating a multi-line paragraph-->
-    <p>
+    <!-- Also from the CSS styling we can add styles directly-->
+    <p style="text-align: center;">
       This is my large Paragraph 
       And I have more paragraph here
     </p>
@@ -17,6 +29,22 @@
     <div class="mainDiv"> 
       <div class="firstDiv" id="firstDiv"></div>
       <div class="secondDiv" id="secondDiv"></div>
+      <div class="thirdDiv" id="thirdDiv"></div>
     </div>
+    <!-- Creating an input element with type attribute-->
+    <input type="password" placehoder="Enter Passord">
+    <!--Advanced PUG | using logic inside the attribute-->
+    <input type="password" placehoder="Enter Passord" data-js="Active">
+    <!-- Creating multi classes of an element using an array-->
+    <div class="class1 class2 class3"></div>
+    <!-- Aslo we can ADD a new class to the array of the classes-->
+    <div class="class1 class2 class3 class4"></div>
+    <!-- Defining the CSS styles-->
+    <div style="color:red;background-color:blue;"></div>
+    <!-- Creating an element attribute object const using &attributes--><img src="myPhoto.png" alt="This is my photo">
+    <!--Boolean Attributes-->
+    <input type="text">
+    <!-- Using the CSS style by using a JS Object-->
+    <div style="text-align:center;text-transform:uppercase;">This is the Second Paragraph</div>
   </body>
 </html>

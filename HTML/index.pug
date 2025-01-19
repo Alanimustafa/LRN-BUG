@@ -2,13 +2,26 @@ doctype html
 html 
     head 
         // Adding a title to the html file
-        title Learning PUG 
+        title Learning PUG
+
+        // Using of the CSS style 
+        // Need to create a CSS file.
+        link(rel="stylesheet", href="style.css")
+
+        //Crating a multi line style
+        style.
+            p {
+                color : Yellow;
+                text-decoration: underline;
+            }
+ 
     body 
         // Creating an h1 header
         h1 Learning PUG 
         
         // Creating a multi-line paragraph
-        p. 
+        // Also from the CSS styling we can add styles directly
+        p(style="text-align: center;").
             This is my large Paragraph 
             And I have more paragraph here
         h2 Welcome to PUG
@@ -17,3 +30,33 @@ html
         .mainDiv 
             #firstDiv.firstDiv
             #secondDiv.secondDiv
+            .thirdDiv#thirdDiv
+        
+        // Creating an input element with type attribute
+        input(type="password" placehoder="Enter Passord")
+
+        //Advanced PUG | using logic inside the attribute
+        input(type="password" placehoder="Enter Passord" data-js= `${5 < 10 ? "Active" : "NOT Active"}`)
+
+        // Creating multi classes of an element using an array
+        - const myClasses = ["class1", "class2", "class3"]
+        div(class= myClasses)
+
+        // Aslo we can ADD a new class to the array of the classes
+        div(class= myClasses).class4
+
+        // Defining the CSS styles
+        - const myStyles = {"color" : "red", "background-color" : "blue"}
+        div(style = myStyles)
+
+        // Creating an element attribute object const using &attributes
+        - const myAttributes = {"src": "myPhoto.png", "alt": "This is my photo"}
+        img&attributes(myAttributes)
+
+        //Boolean Attributes
+        input(type="text" disabled=false)
+
+        // Using the CSS style by using a JS Object
+        - const p2Style = {"text-align" : "center", "text-transform" : "uppercase"};
+        div(style= p2Style) This is the Second Paragraph
+
