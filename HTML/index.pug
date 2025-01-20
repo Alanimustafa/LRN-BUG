@@ -60,3 +60,68 @@ html
         - const p2Style = {"text-align" : "center", "text-transform" : "uppercase"};
         div(style= p2Style) This is the Second Paragraph
 
+
+        // Using of For/Each loop
+        // num is the elements in the array
+        // index is the index of each element in the array
+        - const names = ["Mustafa", "Ammar", "Meena", "Rania", "Rasha"]
+        h1 For/Each Loop
+        each num, index in names
+            p= num + " - index " + index
+
+        // Each Loop Another Example
+        h1(style="color:red; justify-self:center") Each-Loop with objects
+        - const grades = {"Web Dev" : 85, "Software Design": 90}
+        // Note that "index" refers to the actual property name and "grade" takes the value of each object in grades
+        each grade, index in grades 
+            p(style="color:wheat; text-decoration:none")= grade + " - " + index
+        
+        // For Loop Another Example
+        h1(style="color:lightgreen; justify-self:center") For-Loop with objects
+        - const grades1 = {"Web Dev" : 90, "UI / UX": 85, "CSS": 100}
+        // for loop comes with "else" in case there are no values in the grades1
+        for grade, index in grades1 
+            p(style="color:green; text-decoration:none")= grade + " - " + index
+        else 
+            strong No values are here!
+
+        // If/Else statement
+        h2 Using the if statement 
+        - let user = { name : "Mustafa", loggedIn : false, lastLogin: 15 }
+        if user.loggedIn
+            p 
+                | Welcome back,
+                strong #{ user.name }
+        else if user.lastLogin < 6
+            p Your last login was less than #{user.lastLogin} minutes. 
+        else if user.lastLogin > 6 
+            P The session is expired 
+            a(href="./login" style="color: lightblue") LogIn here
+
+        else 
+            p
+                | Your are NOT logged In
+            a(href="/login" style="color:orange") Lon In
+
+        
+        // Using of the case statement | switch Statement
+        // Orderstatus cases | 'Pending | 'In_Transit' | 'Completed'
+        - const orderStatus = 'Pending'
+
+        case orderStatus
+            when 'Pending'
+                p Your Order has been placed.
+            when 'In_Transit'
+                p Your order is in the transit. 
+            when 'Compeleted'
+                p Your order hsa been completed.
+            default 
+                p No Order has been listed
+
+        
+        // Includes Statement | Including other Pug files
+        h1 Company name
+        nav
+            a(href="index.html") Home
+            a(href="about.html") About us
+            a(href="#") Contact us
